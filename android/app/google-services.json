@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "71244192766",
+    "project_id": "xnmo-4bd10",
+    "storage_bucket": "xnmo-4bd10.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71244192766:android:3d7b884174ff2c1f44feaf",
+        "android_client_info": {
+          "package_name": "com.example.xnmoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnBCzO47LwTKNnMqYWoSvl8LO3Sb1Pw9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
