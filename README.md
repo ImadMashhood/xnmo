@@ -5,14 +5,13 @@ XNMO is a Flutter-based employee time-tracking app that allows users to clock in
 ---
 
 ## 🚀 Features
-
-- ✅ **User Authentication** - Secure login and sign-up using Firebase Authentication
-- ✅ **Clock In & Out** - Tracks user check-ins, breaks, and check-outs
-- ✅ **GPS Logging** - Stores user location during clock-in/out for verification
-- ✅ **Real-Time Status Updates** - Displays latest status with timestamps
-- ✅ **Shimmer Loading Effects** - Enhances UI while fetching data
-- ✅ **Admin Controls** - Ability to manually set admin users in Firestore
-- ✅ **Dynamic UI Animations** - Uses transitions, fades, and a circular reveal effect
+- ✅ Clock In & Out – Tracks clock-ins, breaks, and clock-outs with timestamps.
+- ✅ GPS Logging – Stores user location during clock-in/out for verification.
+- ✅ Real-Time Status Updates – Displays the latest work status with timestamps.
+- ✅ Shimmer Loading Effects – Smooth loading animations while fetching data.
+- ✅ Work History & Analytics – Users can view logged hours and break times in an interactive Activity Card.
+- ✅ Embedded Maps – Displays clock-in/out locations using OpenStreetMap.
+- ✅ Firestore Integration – All work logs are stored & synced in real-time.
 
 ---
 
@@ -58,14 +57,23 @@ flutter run
 ## ⏳ Usage
 
 ### Clocking In & Out
-
-- Users can clock in from the home screen.
-- Status updates to "Clocked In" with a timestamp.
-- Users can take breaks and end breaks.
-- When clocking out, a new entry is stored in Firestore.
+- Users tap the Clock In button from the Home Screen.
+- Status updates to "Clocked In" with a timestamp and GPS location.
+- Users can tap "Take Break" to log a break.
+- The system records the timestamp and pauses work tracking.
+- Pressing "End Break" resumes tracking.
+- Users tap "Clock Out" to finish their work session.
+- A new entry is stored in Firestore with:
+- Start Time (Clock In)
+- End Time (Clock Out)
+- Break Duration
+- Total Worked Hours (calculated automatically)
+- Users can view their work history in the Activity Card.
+- Maps display locations of clock-ins and clock-outs.
+- Total work hours for the selected day are calculated dynamically.
+- 🚀 All data is synced in real-time using Firebase Firestore.
 
 ### Admin Features
-
 - Admins can be manually assigned in Firestore (`isAdmin: true`).
 - Admins can access advanced reports (feature in progress).
 
@@ -111,8 +119,6 @@ flutter run
 ## 🔮 Roadmap
 
 - 🚀 **Admin Dashboard** (Web-based analytics for managers)
-- 🚀 **Offline Mode** (Sync logs when reconnected)
-- 🚀 **Shift Scheduling** (Assign work shifts)
 
 ---
 
