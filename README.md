@@ -18,9 +18,9 @@ XNMO is a Flutter-based employee time-tracking app that allows users to clock in
 
 ## 📸 Screenshots
 
-| Login | Home Screen | Clock-In Status |
-| ----- | ----------- | --------------- |
-|       |             |                 |
+| Login            | Home Screen         |
+|------------------|---------------------|
+| images/login.png | images/homePage.png |
 
 ---
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:xnmoapp/activity_card.dart';
-import 'package:xnmoapp/splash.dart';
-import 'package:xnmoapp/status.dart';
+import 'package:xnmoapp/screens/splash.dart';
+import 'package:xnmoapp/widgets/activity_card.dart';
+import 'package:xnmoapp/widgets/status.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
