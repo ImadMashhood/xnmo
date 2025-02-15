@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'package:xnmoapp/expandable_card.dart';
+import 'package:xnmoapp/reusable_components/expandable_card.dart';
 
 class ActivityCard extends StatefulWidget {
   const ActivityCard({super.key});

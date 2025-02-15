@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:xnmoapp/expandable_card.dart';
+import 'package:xnmoapp/reusable_components/expandable_card.dart';
 
 class StatusCard extends StatefulWidget {
   const StatusCard({super.key});
