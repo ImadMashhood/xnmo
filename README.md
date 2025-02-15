@@ -85,19 +85,21 @@ flutter run
 
 ```bash
 /xnmoapp
- ├── lib/
- │   ├── main.dart          # Entry point
- │   ├── splash.dart        # Splash screen with fade animation
- │   ├── login.dart         # Login screen
- │   ├── signup.dart        # Signup screen
- │   ├── homescreen.dart    # Home screen with clock-in features
- │   ├── widgets/
- │   │   ├── status_card.dart # Displays clock-in status
- │   │   ├── clock_buttons.dart # Clock-in and clock-out buttons
- │   ├── services/
- │   │   ├── auth_service.dart  # Handles Firebase Authentication
- │   │   ├── location_service.dart  # Manages GPS tracking
- │   │   ├── firestore_service.dart  # Handles Firestore operations
+  ├── lib/
+ │   ├── main.dart                   # Entry point of the app
+ │
+ │   ├── reusable_components/         # Reusable UI components
+ │   │   ├── expandable_card.dart     # Expandable card component
+ │
+ │   ├── screens/                     # Main screens of the app
+ │   │   ├── homescreen.dart          # Home screen
+ │   │   ├── login.dart               # Login screen
+ │   │   ├── signup.dart              # Signup screen
+ │   │   ├── splash.dart              # Splash screen
+ │
+ │   ├── widgets/                      # Reusable widgets
+ │   │   ├── activity_card.dart        # Displays work activity logs
+ │   │   ├── status.dart               # Displays current clock-in status
  ├── android/   # Android-specific configurations
  ├── ios/       # iOS-specific configurations
  ├── pubspec.yaml # Flutter dependencies
