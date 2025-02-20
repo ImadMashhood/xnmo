@@ -86,23 +86,37 @@ flutter run
 ```bash
 /xnmoapp
   ├── lib/
- │   ├── main.dart                   # Entry point of the app
- │
- │   ├── reusable_components/         # Reusable UI components
- │   │   ├── expandable_card.dart     # Expandable card component
- │
- │   ├── screens/                     # Main screens of the app
- │   │   ├── homescreen.dart          # Home screen
- │   │   ├── login.dart               # Login screen
- │   │   ├── signup.dart              # Signup screen
- │   │   ├── splash.dart              # Splash screen
- │
- │   ├── widgets/                      # Reusable widgets
- │   │   ├── activity_card.dart        # Displays work activity logs
- │   │   ├── status.dart               # Displays current clock-in status
- ├── android/   # Android-specific configurations
- ├── ios/       # iOS-specific configurations
- ├── pubspec.yaml # Flutter dependencies
+  │   ├── main.dart                      # Entry point of the app
+  │
+  │   ├── enum/                           # Enums for managing app states
+  │   │   ├── work_status_enum.dart       # Enum for work status values
+  │
+  │   ├── repositories/                   # Data repositories for Firestore
+  │   │   ├── firestore_repository.dart   # Handles Firestore interactions
+  │
+  │   ├── reusable_components/            # Reusable UI components
+  │   │   ├── expandable_card.dart        # Expandable card component
+  │
+  │   ├── screens/                        # Main screens of the app
+  │   │   ├── homescreen_screen.dart      # Home screen
+  │   │   ├── login_screen.dart           # Login screen
+  │   │   ├── signup_screen.dart          # Signup screen
+  │   │   ├── splash_screen.dart          # Splash screen
+  │
+  │   ├── services/                       # Service layer for external dependencies
+  │   │   ├── firestore_service.dart      # Firestore service logic
+  │   │   ├── location_service.dart       # Location tracking service
+  │
+  │   ├── view_models/                    # View models for state management
+  │   │   ├── status_view_model.dart      # Status management using Provider
+  │
+  │   ├── widgets/                        # Reusable UI widgets
+  │   │   ├── activity_card.dart          # Displays work activity logs
+  │   │   ├── status_card.dart            # Displays current clock-in status
+  │
+  ├── android/                            # Android-specific configurations
+  ├── ios/                                # iOS-specific configurations
+  ├── pubspec.yaml                        # Flutter dependencies
 ```
 
 ---
