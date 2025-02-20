@@ -1,13 +1,14 @@
 enum WorkStatus {
-  clockIn("CLOCKEDIN", "Clock In"),
-  onBreak("ONBREAK", "Take Break"),
-  endBreak("ENDBREAK", "End Break"),
-  clockOut("CLOCKEDOUT", "Clock Out");
+  clockIn("CLOCKEDIN", "Clock In", "Clocked In"),
+  onBreak("ONBREAK", "Take Break", "Took Break"),
+  endBreak("ENDBREAK", "End Break", "Ended Break"),
+  clockOut("CLOCKEDOUT", "Clock Out", "Clocked Out");
 
   final String backendValue;
   final String displayName;
+  final String pastTenseDisplayName;
 
-  const WorkStatus(this.backendValue, this.displayName);
+  const WorkStatus(this.backendValue, this.displayName, this.pastTenseDisplayName);
 }
 
 extension WorkStatusExtension on String {

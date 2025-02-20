@@ -32,4 +32,16 @@ class FirestoreService {
       'location': {'lat': lat, 'lon': lon},
     });
   }
+
+  Future<QuerySnapshot?> getActivityLogs() async {
+    User? user = _auth.currentUser;
+    if (user == null) return null;
+
+    return await _firestore
+        .collection('users')
+        .doc(user.uid)
+        .collection('timestamps')
+        .orderBy('timestamp', descending: true)
+        .get();
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:xnmoapp/objects/work_logs.dart';
 import 'package:xnmoapp/services/firestore_service.dart';
 import 'package:xnmoapp/services/location_service.dart';
 
@@ -17,5 +18,20 @@ class FirestoreRepository {
   Future<void> logAction(String status) async {
     Position position = await _locationService.getCurrentPosition();
     await _firestoreService.addTimestamp(status, position.latitude, position.longitude);
+  }
+
+  Future<List<WorkLog>> fetchActivityLogs() async {
+    QuerySnapshot? snapshot = await _firestoreService.getActivityLogs();
+    if (snapshot == null || snapshot.docs.isEmpty) return [];
+
+    return snapshot.docs.map((doc) {
+      var data = doc.data() as Map<String, dynamic>;
+      return WorkLog(
+        date: (data['timestamp'] as Timestamp).toDate(),
+        status: data['status'] ?? "Unknown",
+        latitude: data['location']?['lat'],
+        longitude: data['location']?['lon'],
+      );
+    }).toList();
   }
 }
