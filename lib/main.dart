@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:xnmoapp/screens/splash_screen.dart';
+import 'package:xnmoapp/view_models/activity_view_model.dart';
 import 'package:xnmoapp/view_models/status_view_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Initialize Firebase
+  await Firebase.initializeApp();
 
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => StatusViewModel()),
-        // ChangeNotifierProvider(create: (context) => ActivityViewModel()),
+        ChangeNotifierProvider(create: (context) => ActivityViewModel()),
       ],
       child: const MyApp(),
     ),
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color(0xFFFFDA49),
           brightness: Brightness.dark,
         ),
-        cardColor: Colors.grey[900], // Dark surface color for cards
+        cardColor: Colors.grey[900],
         scaffoldBackgroundColor: const Color(0xFF121212),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFFFFDA49),
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
           hintStyle: const TextStyle(color: Colors.white60),
         ),
       ),
-      home: const SplashScreen(), // Start with the Splash Screen
+      home: const SplashScreen(),
     );
   }
 }

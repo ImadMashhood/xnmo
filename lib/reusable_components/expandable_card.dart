@@ -29,12 +29,11 @@ class _ExpandableCardState extends State<ExpandableCard> with SingleTickerProvid
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      color: Theme.of(context).cardColor, // Uses theme-defined dark surface
+      color: Theme.of(context).cardColor,
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Column(
         children: [
-          // **Header with Expand/Collapse Chevron**
           ListTile(
             title: Text(
               widget.title,
@@ -50,7 +49,6 @@ class _ExpandableCardState extends State<ExpandableCard> with SingleTickerProvid
             ),
           ),
 
-          // **Expanded Content with Animated Size**
           AnimatedSize(
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
