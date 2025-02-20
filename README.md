@@ -95,23 +95,40 @@ flutter run
 ```bash
 /xnmoapp
   ├── lib/
- │   ├── main.dart                   # Entry point of the app
+ │   ├── main.dart                      # Entry point of the app
  │
- │   ├── reusable_components/         # Reusable UI components
- │   │   ├── expandable_card.dart     # Expandable card component
+ │   ├── enum/                           # Enums for managing app states
+ │   │   ├── work_status_enum.dart       # Enum for work status values
  │
- │   ├── screens/                     # Main screens of the app
- │   │   ├── homescreen.dart          # Home screen
- │   │   ├── login.dart               # Login screen
- │   │   ├── signup.dart              # Signup screen
- │   │   ├── splash.dart              # Splash screen
+ │   ├── objects/                        # Data models & sources
+ │   │   ├── work_logs.dart              # Work log model
+ │   │   ├── work_data_source.dart       # Data source for work logs
  │
- │   ├── widgets/                      # Reusable widgets
- │   │   ├── activity_card.dart        # Displays work activity logs
- │   │   ├── status.dart               # Displays current clock-in status
- ├── android/   # Android-specific configurations
- ├── ios/       # iOS-specific configurations
- ├── pubspec.yaml # Flutter dependencies
+ │   ├── repositories/                   # Repositories for handling data access
+ │   │   ├── firestore_repository.dart   # Firestore data handling
+ │   │   ├── map_repository.dart         # Handles map widget retrieval
+ │
+ │   ├── reusable_components/            # Reusable UI components
+ │   │   ├── expandable_card.dart        # Expandable card component
+ │
+ │   ├── screens/                        # Main screens of the app
+ │   │   ├── homescreen_screen.dart      # Home screen
+ │   │   ├── login_screen.dart           # Login screen
+ │   │   ├── signup_screen.dart          # Signup screen
+ │   │   ├── splash_screen.dart          # Splash screen
+ │
+ │   ├── services/                       # Service layer for external dependencies
+ │   │   ├── firestore_service.dart      # Firestore API service
+ │   │   ├── location_service.dart       # GPS location tracking service
+ │   │   ├── map_service.dart            # Generates map tile URLs
+ │
+ │   ├── view_models/                    # View models for state management (Provider)
+ │   │   ├── activity_view_model.dart    # Manages work activity logs & total hours
+ │   │   ├── status_view_model.dart      # Manages work status tracking
+ │
+ │   ├── widgets/                        # UI Widgets
+ │   │   ├── activity_card.dart          # Displays work activity logs
+ │   │   ├── status_card.dart            # Displays current clock-in status
 ```
 
 ---

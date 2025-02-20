@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:xnmoapp/screens/splash.dart';
+import 'package:provider/provider.dart';
+import 'package:xnmoapp/screens/splash_screen.dart';
+import 'package:xnmoapp/view_models/status_view_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(); // Initialize Firebase
-  runApp(const MyApp());
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => StatusViewModel()),
+        // ChangeNotifierProvider(create: (context) => ActivityViewModel()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
