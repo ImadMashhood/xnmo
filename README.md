@@ -86,37 +86,40 @@ flutter run
 ```bash
 /xnmoapp
   ├── lib/
-  │   ├── main.dart                      # Entry point of the app
-  │
-  │   ├── enum/                           # Enums for managing app states
-  │   │   ├── work_status_enum.dart       # Enum for work status values
-  │
-  │   ├── repositories/                   # Data repositories for Firestore
-  │   │   ├── firestore_repository.dart   # Handles Firestore interactions
-  │
-  │   ├── reusable_components/            # Reusable UI components
-  │   │   ├── expandable_card.dart        # Expandable card component
-  │
-  │   ├── screens/                        # Main screens of the app
-  │   │   ├── homescreen_screen.dart      # Home screen
-  │   │   ├── login_screen.dart           # Login screen
-  │   │   ├── signup_screen.dart          # Signup screen
-  │   │   ├── splash_screen.dart          # Splash screen
-  │
-  │   ├── services/                       # Service layer for external dependencies
-  │   │   ├── firestore_service.dart      # Firestore service logic
-  │   │   ├── location_service.dart       # Location tracking service
-  │
-  │   ├── view_models/                    # View models for state management
-  │   │   ├── status_view_model.dart      # Status management using Provider
-  │
-  │   ├── widgets/                        # Reusable UI widgets
-  │   │   ├── activity_card.dart          # Displays work activity logs
-  │   │   ├── status_card.dart            # Displays current clock-in status
-  │
-  ├── android/                            # Android-specific configurations
-  ├── ios/                                # iOS-specific configurations
-  ├── pubspec.yaml                        # Flutter dependencies
+ │   ├── main.dart                      # Entry point of the app
+ │
+ │   ├── enum/                           # Enums for managing app states
+ │   │   ├── work_status_enum.dart       # Enum for work status values
+ │
+ │   ├── objects/                        # Data models & sources
+ │   │   ├── work_logs.dart              # Work log model
+ │   │   ├── work_data_source.dart       # Data source for work logs
+ │
+ │   ├── repositories/                   # Repositories for handling data access
+ │   │   ├── firestore_repository.dart   # Firestore data handling
+ │   │   ├── map_repository.dart         # Handles map widget retrieval
+ │
+ │   ├── reusable_components/            # Reusable UI components
+ │   │   ├── expandable_card.dart        # Expandable card component
+ │
+ │   ├── screens/                        # Main screens of the app
+ │   │   ├── homescreen_screen.dart      # Home screen
+ │   │   ├── login_screen.dart           # Login screen
+ │   │   ├── signup_screen.dart          # Signup screen
+ │   │   ├── splash_screen.dart          # Splash screen
+ │
+ │   ├── services/                       # Service layer for external dependencies
+ │   │   ├── firestore_service.dart      # Firestore API service
+ │   │   ├── location_service.dart       # GPS location tracking service
+ │   │   ├── map_service.dart            # Generates map tile URLs
+ │
+ │   ├── view_models/                    # View models for state management (Provider)
+ │   │   ├── activity_view_model.dart    # Manages work activity logs & total hours
+ │   │   ├── status_view_model.dart      # Manages work status tracking
+ │
+ │   ├── widgets/                        # UI Widgets
+ │   │   ├── activity_card.dart          # Displays work activity logs
+ │   │   ├── status_card.dart            # Displays current clock-in status
 ```
 
 ---

@@ -33,15 +33,17 @@ class FirestoreService {
     });
   }
 
-  Future<QuerySnapshot?> getActivityLogs() async {
+  Stream<QuerySnapshot> streamActivityLogs() {
     User? user = _auth.currentUser;
-    if (user == null) return null;
+    if (user == null) {
+      return const Stream.empty();
+    }
 
-    return await _firestore
+    return _firestore
         .collection('users')
         .doc(user.uid)
         .collection('timestamps')
         .orderBy('timestamp', descending: true)
-        .get();
+        .snapshots();
   }
 }

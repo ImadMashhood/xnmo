@@ -13,16 +13,12 @@ class ActivityViewModel extends ChangeNotifier {
   DateTime? selectedDate;
 
   ActivityViewModel() {
-    fetchActivityLogs();
+    _observeActivityLogs();
   }
 
-  Future<void> fetchActivityLogs() async {
-    isLoading = true;
-    notifyListeners();
-
-    try {
-      workLogs = await _firestoreRepository.fetchActivityLogs();
-      workLogs = workLogs.map((log) {
+  void _observeActivityLogs() {
+    _firestoreRepository.streamActivityLogs().listen((logs) {
+      workLogs = logs.map((log) {
         return WorkLog(
           date: log.date,
           status: log.status.toWorkStatus().pastTenseDisplayName,
@@ -30,12 +26,10 @@ class ActivityViewModel extends ChangeNotifier {
           longitude: log.longitude,
         );
       }).toList();
-    } catch (e) {
-      workLogs = [];
-    } finally {
+
       isLoading = false;
       notifyListeners();
-    }
+    });
   }
 
   List<WorkLog> getLogsForDate(DateTime date) {
