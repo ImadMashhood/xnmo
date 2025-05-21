@@ -46,4 +46,13 @@ class FirestoreService {
         .orderBy('timestamp', descending: true)
         .snapshots();
   }
+
+  Stream<QuerySnapshot> getActivityLogsForUser(String userId) {
+    return _firestore
+        .collection('users')
+        .doc(userId)
+        .collection('timestamps')
+        .orderBy('timestamp', descending: true)
+        .snapshots();
+  }
 }
