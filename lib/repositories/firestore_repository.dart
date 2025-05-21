@@ -20,6 +20,20 @@ class FirestoreRepository {
     await _firestoreService.addTimestamp(status, position.latitude, position.longitude);
   }
 
+  Stream<List<WorkLog>> streamActivityLogsForUser(String userId) {
+    return _firestoreService.getActivityLogsForUser(userId).map((snapshot) {
+      return snapshot.docs.map((doc) {
+        var data = doc.data() as Map<String, dynamic>;
+        return WorkLog(
+          date: (data['timestamp'] as Timestamp).toDate(),
+          status: data['status'],
+          latitude: data['location']?['lat'],
+          longitude: data['location']?['lon'],
+        );
+      }).toList();
+    });
+  }
+
   Stream<List<WorkLog>> streamActivityLogs() {
     return _firestoreService.streamActivityLogs().map((snapshot) {
       return snapshot.docs.map((doc) {

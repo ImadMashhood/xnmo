@@ -18,7 +18,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
 
-  bool _isLoading = false; // Tracks loading state
+  bool _isLoading = false;
 
   Future<void> _signUp() async {
     if (_emailController.text.trim().isEmpty || _passwordController.text.trim().isEmpty) {
